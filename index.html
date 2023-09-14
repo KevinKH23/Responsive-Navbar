@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- Box Icons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <title>Responsive Navbar</title>
+  </head>
+  <body>
+    <nav class="header">
+      <a href="#" class="logo">Logo</a>
+      <div class="navbar">
+        <a href="#">Home</a>
+        <a href="#">About Us</a>
+        <a href="#">Menu</a>
+        <a href="#">Contact Us</a>
+      </div>
+      <div class="navbar-extra">
+        <a href="#" id="burger-menu"><i class="bx bx-menu"></i></a>
+      </div>
+    </nav>
+    <script>
+      // Toggle class active
+      const navbar = document.querySelector(".navbar");
+
+      // Ketika hamburger menu di klik
+      document.querySelector("#burger-menu").onclick = () => {
+        navbar.classList.toggle("active");
+      };
+
+      // Klik di luar sidebar untuk menghilangkan nav
+      const hamburger = document.querySelector("#burger-menu");
+
+      document.addEventListener("click", function (e) {
+        if (!hamburger.contains(e.target) && !navbar.contains(e.target)) {
+          navbar.classList.remove("active");
+        }
+      });
+    </script>
+  </body>
+</html>
